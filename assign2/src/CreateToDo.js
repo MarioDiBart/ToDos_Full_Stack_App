@@ -1,16 +1,18 @@
 import React, {useState} from "react";
 
-export default function CreateToDo({ user, setToDo, todos }) {
+
+export default function CreateToDo({ user, dispatch, todos }) {
   const [ title, setTitle ] = useState("")
   const [ description, setDescriptiont ] = useState("")
- 
+  const [dateCreated, setDateCreated] = useState(Date.now)
+
   function handleTitle (evt) { setTitle(evt.target.value) }
   function handleDescription (evt) { setDescriptiont(evt.target.value) }
   function handleCreate (evt) {  
-    const newToDo = {title, description, dateCreated: Date.now()}
+    //const newToDo = {title, description, dateCreated: Date.now()}
     //console.log(newToDo)
     // const newPostCopy = { ...newPost }
-     setToDo([newToDo, ...todos])
+     dispatch({type: 'CREATE_TODO', title, description, dateCreated})
   }
 
   return (
