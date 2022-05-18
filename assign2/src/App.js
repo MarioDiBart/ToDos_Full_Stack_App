@@ -19,8 +19,8 @@ function App() {
   return (
     <div>
       <UserBar user={state.user} dispatch = {dispatch} />
-      {state.user && <CreateToDo user={state.user} todos={state.todos} dispatch={dispatch} />}
-      <ToDoList todos={state.todos} />
+      {state.user && <CreateToDo user={state.user} dispatch={dispatch} todos={state.todos}  />}
+      <ToDoList todos={state.todos} dispatch={dispatch}/> 
     </div>
   );
 }

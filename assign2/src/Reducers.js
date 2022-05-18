@@ -16,17 +16,20 @@ function todoReducer(state, action) {
         case 'CREATE_TODO':
         const newTodo = {
             title: action.title,
-            content: action.content,
-            checked: action.checked
+            description: action.description,
+            dateCreated: action.dateCreated,
+            dateCompleted: action.dateCompleted,
+            completed: action.completed,
+            id: action.id
         };
         return [newTodo, ...state];
         case 'DELETE_TODO':
-                
-            return state.filter(todo => todo.id != action.id)
-        case 'FETCH_TODOS':
-            return action.todos;
+            return action.updatedTodo
+            //return state.filter(todo => todo.id != action.id)
+        //case 'FETCH_TODOS':
+          //  return action.todos;
         case 'TOGGLE_TODO':
-            return 
+            return action.updatedTodo
         default:
         return state;
 }
