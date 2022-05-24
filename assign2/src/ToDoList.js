@@ -4,14 +4,16 @@ import ToDo from "./ToDo";
 export default function ToDoList({ todos = [], dispatch }) {
   
   const updateTodo = (id, updatedTodo) => {
+    console.log("Input Id and todo", id, updatedTodo)
     const updatedTodos = todos.map((todo) => todo.id === id ? updatedTodo: todo)
-
-    dispatch({type: 'TOGGLE_TODO', updatedTodos} )
+    console.log("Updated Todos: ", updatedTodos)
+    dispatch({type: 'TOGGLE_TODO', updatedTodos: updatedTodos} )
   }
 
   const deleteToDo = (id) => {
-    const updatedToDos = todos.filter((todo) => todo.id !== id)
-    dispatch({ type: 'DELETE_TODO', updatedToDos})
+    const updatedToDo = todos.filter((todo) => todo.id !== id)
+    console.log(updatedToDo)
+    dispatch({ type: 'DELETE_TODO', updatedToDo})
    }
 
  

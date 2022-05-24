@@ -1,15 +1,16 @@
 import {useState} from "react";
 import * as React from 'react';
 
-export default function ToDo({ title, description, dateCreated, dateCompleted, completed, id, updateTodo, deleteTodo}) {
+export default function ToDo({ title, description, dateCreated, dateCompleted, completed, id, updateTodo, deleteToDo}) {
     //const [dateCompleted, setDateCompleted] = useState("");
     const [checked, setChecked] = React.useState(false);
     const updatedToDo = {title, description, dateCreated, id, dateCompleted: Date.now(), completed: !completed }
-    
+  
     const handleChange = (event) => {
     setChecked(event.target.checked)
     updateTodo(id, updatedToDo)
   };
+  
     return (
     <div>
       <h3>{title}</h3>
@@ -24,7 +25,7 @@ export default function ToDo({ title, description, dateCreated, dateCompleted, c
       <input 
         type = "button"
         value = "Delete Todo"
-        onClick = {() => deleteTodo(id)} />
+        onClick = {() => deleteToDo(id)} />
     </div>
   );
 }

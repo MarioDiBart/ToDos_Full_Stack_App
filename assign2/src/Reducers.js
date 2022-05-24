@@ -24,12 +24,12 @@ function todoReducer(state, action) {
         };
         return [newTodo, ...state];
         case 'DELETE_TODO':
-            return action.updatedTodo
+            return action.updatedToDo
             //return state.filter(todo => todo.id != action.id)
         //case 'FETCH_TODOS':
           //  return action.todos;
         case 'TOGGLE_TODO':
-            return action.updatedTodo
+            return action.updatedTodos
         default:
         return state;
 }
@@ -38,6 +38,6 @@ function todoReducer(state, action) {
 export default function appReducer(state, action){
     return {
         user: userReducer(state.user, action),
-        todos: todoReducer(state.posts, action)
+        todos: todoReducer(state.todos, action)
     }
 }
