@@ -1,13 +1,35 @@
-import React, {useState} from "react";
+import React, {useState, useContext, useEffect} from "react";
+import { useResource } from "react-request-hook";
+import { useNavigation } from 'react-navi'
+
+
+import StateContext from "./Context";
 
 
 export default function CreateToDo({ user, dispatch, todos}) {
   const [ title, setTitle ] = useState("")
   const [ description, setDescriptiont ] = useState("")
  
+  const navigation = useNavigation()
+
+  const {state, dispatch} = useContext(StateContext)
+  const{user} = state
 
   function handleTitle (evt) { setTitle(evt.target.value) }
   function handleDescription (evt) { setDescriptiont(evt.target.value) }
+  
+  const [todo, CreateToDo] = useResource(({title, description, dateCreated, dateCompleted, id}) => ({
+    url: '/todos',
+    method: 'post',
+    data: {title, description, dateCreated, dateCompleted, id}
+  }))
+  
+  useEffect(() => {
+    if(todo && todo.data && todo.isLoading === false){
+      navigation.navigate(`/todo/${todo.data.id}`)
+    }
+  }, [todo])
+  
   function handleCreate (evt) {  
     //const newToDo = {title, description, dateCreated: Date.now()}
     //console.log(newToDo)
