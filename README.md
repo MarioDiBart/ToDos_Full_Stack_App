@@ -1,4 +1,4 @@
-#Heading1 Overview:
+### Overview:
 
 This application is a fullstack project I created in a web development class I took at DePaul University. I designed a todo list application
 that keeps track of users logged in as well as allows the user to create a todo list in which they can check which todos have been completed
