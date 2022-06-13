@@ -3,6 +3,7 @@ import ToDo from "./ToDo";
 
 export default function ToDoList({ todos = [], dispatch }) {
   
+  
   const updateTodo = (id, updatedTodo) => {
     console.log("Input Id and todo", id, updatedTodo)
     const updatedTodos = todos.map((todo) => todo.id === id ? updatedTodo: todo)
@@ -15,6 +16,7 @@ export default function ToDoList({ todos = [], dispatch }) {
     console.log(updatedToDo)
     dispatch({ type: 'DELETE_TODO', updatedToDo})
    }
+   
 
  
   return (

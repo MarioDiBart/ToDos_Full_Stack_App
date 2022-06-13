@@ -6,7 +6,7 @@ import { useNavigation } from 'react-navi'
 import StateContext from "./Context";
 
 
-export default function CreateToDo({ user, dispatch, todos}) {
+export default function CreateToDo() {
   const [ title, setTitle ] = useState("")
   const [ description, setDescriptiont ] = useState("")
  
@@ -18,15 +18,18 @@ export default function CreateToDo({ user, dispatch, todos}) {
   function handleTitle (evt) { setTitle(evt.target.value) }
   function handleDescription (evt) { setDescriptiont(evt.target.value) }
   
-  const [todo, CreateToDo] = useResource(({title, description, dateCreated, dateCompleted, id}) => ({
+  const [todo, CreateToDoNet] = useResource(({title, description, dateCreated, dateCompleted, id}) => ({
     url: '/todos',
     method: 'post',
     data: {title, description, dateCreated, dateCompleted, id}
+   
   }))
+
+
   
   useEffect(() => {
     if(todo && todo.data && todo.isLoading === false){
-      navigation.navigate(`/todo/${todo.data.id}`)
+      navigation.navigate(`/`)
     }
   }, [todo])
   
@@ -34,6 +37,7 @@ export default function CreateToDo({ user, dispatch, todos}) {
     //const newToDo = {title, description, dateCreated: Date.now()}
     //console.log(newToDo)
     // const newPostCopy = { ...newPost }
+     CreateToDoNet ({title, description, dateCreated: Date.now(), dateCompleted: undefined, completed: false, id: Math.floor(Math.random() * 100000) })
      dispatch({type: 'CREATE_TODO', title, description, dateCreated: Date.now(), dateCompleted: undefined, completed: false, id: Math.floor(Math.random() * 100000)})
   }
 

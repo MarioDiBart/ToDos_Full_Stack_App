@@ -17,9 +17,9 @@ export default function HomePage() {
 
   useEffect(() => {
     if (todos && todos.data) {
-        dispatch({ type: 'FETCH_TODOS', todos: todos.data })
+        dispatch({ type: 'TOGGLE_TODOS', todos: todos.data })
     }
   }, [todos])
 
-  return <ToDoList todos={state.todos} />
+  return <ToDoList dispatch = {dispatch} todos={state.todos} />
 }

@@ -1,0 +1,122 @@
+{
+  "todos": [
+    {
+      "title": "MY TODO",
+      "description": "Brush Teeth",
+      "dateCreated": null,
+      "dateCompleted": null,
+      "id": 1
+    },
+    {
+      "title": "Hello",
+      "description": "Hello",
+      "dateCreated": 1654892488535,
+      "id": 90313
+    },
+    {
+      "title": "Hi",
+      "description": "Hi",
+      "dateCreated": 1654892954726,
+      "id": 55587
+    },
+    {
+      "title": "d",
+      "description": "d",
+      "dateCreated": 1654893162853,
+      "id": 3575
+    },
+    {
+      "title": "Hello",
+      "description": "Hello World",
+      "dateCreated": 1654893305310,
+      "id": 66792
+    },
+    {
+      "title": "Hello",
+      "description": "Hello World",
+      "dateCreated": 1654893376486,
+      "id": 69800
+    },
+    {
+      "title": "Hello ",
+      "description": "Hello World",
+      "dateCreated": 1654893388005,
+      "id": 41924
+    },
+    {
+      "title": "Hello",
+      "description": "World",
+      "dateCreated": 1654893645523,
+      "id": 48809
+    },
+    {
+      "title": "hello",
+      "description": "world",
+      "dateCreated": 1654896613274,
+      "id": 42652
+    },
+    {
+      "title": "paul",
+      "description": "duszak",
+      "dateCreated": 1654908527303,
+      "id": 44842
+    },
+    {
+      "title": "paul",
+      "description": "Duszak",
+      "dateCreated": 1654908535754,
+      "id": 15930
+    },
+    {
+      "title": "Hello",
+      "description": "World",
+      "dateCreated": 1654908978165,
+      "id": 79469
+    },
+    {
+      "title": "hello",
+      "description": "world\n",
+      "dateCreated": 1654909135436,
+      "id": 43092
+    },
+    {
+      "title": "hi",
+      "description": "hlo",
+      "dateCreated": 1655081460142,
+      "id": 70813
+    },
+    {
+      "title": "hllo",
+      "description": "hi",
+      "dateCreated": 1655081572743,
+      "id": 28787
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "paul",
+      "password": "badpassword"
+    },
+    {
+      "username": "PAULTEST",
+      "password": "test",
+      "id": 2
+    },
+    {
+      "username": "NEWTEST",
+      "password": "test",
+      "id": 3
+    },
+    {
+      "username": "MArio",
+      "password": "DiBart",
+      "id": 4
+    },
+    {
+      "username": "mario",
+      "password": "mario",
+      "id": 5
+    }
+  ]
+}
